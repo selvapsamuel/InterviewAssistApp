@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.java.applications.questionbank.entities.Question;
 import com.java.applications.questionbank.vo.Criteria;
 import com.java.applications.questionbank.vo.Questions;
 
@@ -26,6 +27,11 @@ public class QuestionBankDAO {
 		return questions;
 	}
 
+	public Question saveQuestion(Question question) {
+		Question savedQuestion = questionBankRepository.save(question);
+		
+		return savedQuestion;
+	}
 	public QuestionBankRepository getQuestionBankRepository() {
 		return questionBankRepository;
 	}

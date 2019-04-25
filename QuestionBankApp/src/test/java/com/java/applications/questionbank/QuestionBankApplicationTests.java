@@ -1,4 +1,4 @@
-package com.java.applications.QuestionBankApp;
+package com.java.applications.questionbank;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class QuestionBankAppApplicationTests {
+public class QuestionBankApplicationTests {
 
 	@Test
 	public void contextLoads() {

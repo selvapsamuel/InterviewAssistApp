@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.java.applications.questionbank.vo.Complexity;
 import com.java.applications.questionbank.vo.Criteria;
-import com.java.applications.questionbank.vo.QuestionType;
+import com.java.applications.questionbank.vo.Type;
 
 public class JSONGenerator {
 
@@ -48,7 +48,7 @@ public class JSONGenerator {
 		criteria.setSkillId(1);
 		criteria.setSubSkillId(2);
 		criteria.setComplexity(Complexity.HIGH);
-		criteria.setQuestionType(QuestionType.THEORETICAL);
+		criteria.setQuestionType(Type.THEORETICAL);
 		criteria.setTags("client=Intuit,team=QBO");
 		return criteria;
 	}

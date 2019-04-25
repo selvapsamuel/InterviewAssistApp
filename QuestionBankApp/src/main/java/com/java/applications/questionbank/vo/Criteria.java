@@ -4,7 +4,7 @@ public class Criteria {
 
 	private int skillId;
 	private int subSkillId;
-	private QuestionType questionType;
+	private Type questionType;
 	private Complexity complexity;
 	private String tags;
 	
@@ -26,10 +26,10 @@ public class Criteria {
 	public void setTags(String tags) {
 		this.tags = tags;
 	}
-	public QuestionType getQuestionType() {
+	public Type getQuestionType() {
 		return questionType;
 	}
-	public void setQuestionType(QuestionType questionType) {
+	public void setQuestionType(Type questionType) {
 		this.questionType = questionType;
 	}
 	public Complexity getComplexity() {

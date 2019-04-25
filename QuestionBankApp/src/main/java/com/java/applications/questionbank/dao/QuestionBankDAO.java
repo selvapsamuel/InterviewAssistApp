@@ -1,27 +1,36 @@
 package com.java.applications.questionbank.dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.java.applications.questionbank.vo.Criteria;
 import com.java.applications.questionbank.vo.Questions;
 
-@Repository
+@Component
 public class QuestionBankDAO {
 
+	@Autowired
+	private QuestionBankRepository questionBankRepository;
+
 	public Questions getQuestions(Criteria criteria) {
-		 Questions questions = new Questions();
-		 List<String> questionlist = new ArrayList<>();
-		 questionlist.add("what is polymorphism?");
-		 questionlist.add("what is encapsulation?");
-		 questionlist.add("what is inheritence?");
-		 questionlist.add("Explain SOLID design principles");
-		 
-		 questions.setQuestions(questionlist);
-		 questions.setCriteria(criteria);
-		 
+		Questions questions = new Questions();
+
+		List<String> questionList = questionBankRepository.findByCriteria(criteria.getSkillId(),
+				criteria.getSubSkillId(), criteria.getQuestionType().name(), criteria.getComplexity().name());
+
+		questions.setQuestions(questionList);
+		questions.setCriteria(criteria);
+
 		return questions;
+	}
+
+	public QuestionBankRepository getQuestionBankRepository() {
+		return questionBankRepository;
+	}
+
+	public void setQuestionBankRepository(QuestionBankRepository questionBankRepository) {
+		this.questionBankRepository = questionBankRepository;
 	}
 }
